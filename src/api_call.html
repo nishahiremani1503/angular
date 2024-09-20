@@ -1,7 +1,9 @@
-<!-- <div *ngIf="loading">Todo List</div>
-<div *ngIf="error">{{error}}</div>
-<div *ngIf="!loading && !error">
-  <li *ngIf="let todo of todos">
-    {{todo.title}} {{todo.completed ? "(Completed)": "(Pending)"}}
+<div *ngIf="loading">Loading todos...</div>
+<div *ngIf="error">{{ error }}</div>
+<ul *ngIf="!loading && !error">
+  <li *ngFor="let todo of todos">
+    <strong>{{ todo.title }}</strong>
+    <span *ngIf="todo.completed">(Completed)</span>
+    <span *ngIf="!todo.completed">(Pending)</span>
   </li>
-</div> -->
+</ul>

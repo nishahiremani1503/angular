@@ -14,17 +14,7 @@ interface Todo {
   selector: 'api_call',
   standalone: true,
   imports: [CommonModule, HttpClientModule, RouterModule],
-  template: `
-    <div *ngIf="loading">Loading todos...</div>
-    <div *ngIf="error">{{ error }}</div>
-    <ul *ngIf="!loading && !error">
-      <li *ngFor="let todo of todos">
-        <strong>{{ todo.title }}</strong> 
-        <span *ngIf="todo.completed">(Completed)</span>
-        <span *ngIf="!todo.completed">(Pending)</span>
-      </li>
-    </ul>
-  `,
+  templateUrl: 'api_call.html',
 })
 export class ApiCallComponent implements OnInit {
   todos: Todo[] = [];
